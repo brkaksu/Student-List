@@ -1,16 +1,35 @@
-# flutter_cubit_bloc
+# Öğrenci Listesi Uygulaması (Student List App)
 
-A new Flutter project.
+Bu proje, Flutter ve **Cubit** durum yönetimi (State Management) kütüphanesi kullanılarak geliştirilmiş basit bir öğrenci listeleme uygulamasıdır. Proje, Flutter'da modern durum yönetimi yaklaşımlarından biri olan Cubit'in temel kullanımını göstermeyi amaçlamaktadır.
 
-## Getting Started
+## 🚀 Projenin Amacı
 
-This project is a starting point for a Flutter application.
+Bu projenin temel hedefleri şunlardır:
+-   `flutter_bloc` paketi içindeki **Cubit**'in nasıl kullanılacağını göstermek.
+-   Durum yönetimi (State Management) kavramını pratik bir örnekle açıklamak.
+-   UI (Kullanıcı Arayüzü) katmanını iş mantığından (Business Logic) ayırmanın önemini vurgulamak.
+-   `BlocProvider` kullanarak bir Cubit'in widget ağacına nasıl enjekte edileceğini göstermek.
 
-A few resources to get you started if this is your first Flutter project:
+## 🏛️ Proje Mimarisi ve Yapısı
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Proje, basit ve anlaşılır bir klasör yapısı ve mimari deseni takip etmektedir.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-   **`main.dart`**: Uygulamanın giriş noktasıdır. Burada, uygulamanın en üst seviyesinde `BlocProvider` aracılığıyla `StudentCubit` oluşturulur ve tüm alt widget'ların bu Cubit'e erişimi sağlanır.
+-   **`features/cubit/student_cubit.dart`**: Uygulamanın iş mantığını içeren durum yönetimi sınıfıdır. Öğrenci ekleme, silme, listeleme gibi işlemlerin mantığı burada yer alır.
+-   **`features/view/home_view.dart`**: Kullanıcının öğrenci listesini gördüğü ve etkileşimde bulunduğu ana ekrandır. Bu ekran, `StudentCubit`'ten gelen duruma göre kendisini günceller.
+-   **`product/theme.dart`**: Uygulamanın genel tema ayarlarını (renkler, fontlar vb.) içeren dosyadır.
+
+### Durum Yönetimi (State Management)
+
+Uygulama, durum yönetimi için `flutter_bloc` paketinin bir parçası olan **Cubit**'i kullanır.
+
+1.  **`StudentCubit`**: `main.dart` içinde `BlocProvider` ile oluşturulur.
+2.  **`BlocProvider`**: `StudentCubit`'i, altındaki tüm widget ağacının (`MaterialApp` ve dolayısıyla `HomeView`) erişebileceği şekilde "sağlar".
+3.  **`HomeView`**: `BlocBuilder` veya `BlocListener` gibi widget'lar aracılığıyla `StudentCubit`'in durumunu dinler ve yeni bir durum (state) geldiğinde arayüzünü günceller.
+
+## ⚙️ Kurulum ve Çalıştırma
+
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+
+1.  **Projeyi Klonlayın:**
+    
