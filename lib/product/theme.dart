@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 var theme = ThemeData(
   primaryColor: primaryColor,
-  buttonTheme: ButtonThemeData(buttonColor: primaryColor),
+  buttonTheme: const ButtonThemeData(buttonColor: primaryColor),
   appBarTheme: AppBarTheme(
     backgroundColor: primaryColor,
     titleTextStyle: GoogleFonts.montserrat(fontSize: 20),
