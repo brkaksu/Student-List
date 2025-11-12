@@ -26,10 +26,4 @@ Uygulama, durum yönetimi için `flutter_bloc` paketinin bir parçası olan **Cu
 1.  **`StudentCubit`**: `main.dart` içinde `BlocProvider` ile oluşturulur.
 2.  **`BlocProvider`**: `StudentCubit`'i, altındaki tüm widget ağacının (`MaterialApp` ve dolayısıyla `HomeView`) erişebileceği şekilde "sağlar".
 3.  **`HomeView`**: `BlocBuilder` veya `BlocListener` gibi widget'lar aracılığıyla `StudentCubit`'in durumunu dinler ve yeni bir durum (state) geldiğinde arayüzünü günceller.
-
-## ⚙️ Kurulum ve Çalıştırma
-
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
-
-1.  **Projeyi Klonlayın:**
     
